@@ -1,0 +1,141 @@
+// @import "mixins";
+@import "reset";
+@import "colors";
+@import "grid";
+
+main {
+  .contaainer {
+    justify-content: center;
+    .top-image {
+      width: 3.2rem;
+      height: 4.9rem;
+      position: absolute;
+      top: 2.7rem;
+      left: 7.2rem;
+    }
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    .register-box {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        color: var(--texts-base, #6a6180);
+        font-family: Poppins;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.6rem; /* 162.5% */
+        margin-bottom: 6.4rem;
+      }
+      h1 {
+        color: $h1;
+        font-family: "Poppins", sans-serif;
+        font-size: 3.6rem;
+        font-weight: 600;
+        line-height: 3.6rem;
+        margin-bottom: 2.7rem;
+      }
+      form {
+        // max-width: 35.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .left {
+          padding-left: 4rem;
+          input, select {
+            width: 100%;
+            max-width: 35.2rem;
+            height: 7.2rem;
+            border: 1px solid #e6e6f0;
+            color: $p;
+            font-family: Poppins;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+            padding-left: 2.4rem;
+            margin-bottom: 2.9rem;
+          }
+          #nome{
+            border-radius: 0.8rem 0rem 0rem 0rem;
+          }
+          #datanascimento{
+            border-radius: 0rem 0.8rem 0rem 0rem;
+          }
+          #email{
+            border-radius: 0rem 0rem 0rem 0.8rem;
+          }
+          #senha{
+            border-radius: 0rem 0rem 0.8rem 0rem;
+          }
+        }
+        .conjunto {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 4rem;
+          text-decoration-line: uns;
+          .left {
+            display: flex;
+            input {
+              margin-right: 1.6rem;
+              //NECESSÁRIO ADICIONAR CÓDIGO PARA O CHECKBOX FICAR VERMELHO!
+            }
+            a {
+              text-decoration-line: unset;
+            }
+          }
+          .right {
+            a {
+              text-decoration-line: unset;
+            }
+          }
+          input {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+          p,
+          label {
+            color: $p;
+            font-family: "Poppins", sans-serif;
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2.4rem; /* 171.429% */
+          }
+        }
+        button {
+          margin-top: 3rem;
+          width: 35.2rem;
+          height: 5.6rem;
+          border-radius: 0.8rem;
+          background: $btn-background;
+          color: $p;
+          text-align: center;
+          font-family: "Archivo", sans-serif;
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 2.6rem;
+          margin-bottom: 4rem;
+          transition: 0.3s all;
+          &:hover {
+            background: $red;
+            color: $white;
+          }
+        }
+      }
+      a {
+        color: $red;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2.6rem;
+        text-decoration-line: underline;
+        text-align: center;
+      }
+    }
+  }
+}
