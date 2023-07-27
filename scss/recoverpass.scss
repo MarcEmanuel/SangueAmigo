@@ -1,0 +1,180 @@
+@import "reset";
+@import "colors";
+@import "grid";
+
+main {
+  .open-modal-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 60%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #6a6180;
+    text-align: center;
+    font-family: "Archivo", sans-serif;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4.2rem; /* 77.778% */
+    margin-bottom: 4.7rem;
+    p {
+      width: 100%;
+      max-width: 50rem;
+      margin-top: 2rem;
+    }
+    img {
+      max-width: 12rem;
+      width: 100%;
+      margin-bottom: 3.3rem;
+    }
+    button {
+      margin-top: 3rem;
+      padding: 1.5rem 4rem;
+      border-radius: 0.8rem;
+      background: $red;
+      color: $white;
+      text-align: center;
+      font-family: "Archivo", sans-serif;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.6rem;
+      margin-bottom: 2rem;
+      transition: 0.3s all;
+    }
+  }
+
+  .close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .contaainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    .top-image {
+      width: 90vw;
+      height: 4.9rem;
+      position: absolute;
+      top: 2.7rem;
+      left: 7.2rem;
+      a {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        p {
+          color: $red;
+          font-size: 2rem;
+          font-family: "Overpass", sans-serif;
+        }
+      }
+    }
+    .login-box {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        max-width: 12rem;
+        width: 100%;
+        margin-bottom: 3.3rem;
+      }
+      h1 {
+        color: #6a6180;
+        text-align: center;
+        font-family: "Archivo", sans-serif;
+        font-size: 5.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 4.2rem; /* 77.778% */
+        margin-bottom: 4.7rem;
+      }
+      h2 {
+        color: #6a6180;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.6rem; /* 81.25% */
+        margin-bottom: 3.8rem;
+        &:last-child {
+          font-weight: 700;
+          margin-bottom: 4.5rem;
+        }
+      }
+      button {
+        margin-top: 3rem;
+        padding: 1.5rem 4rem;
+        border-radius: 0.8rem;
+        background: $red;
+        color: $white;
+        text-align: center;
+        font-family: "Archivo", sans-serif;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2.6rem;
+        margin-bottom: 4rem;
+        transition: 0.3s all;
+        &:hover {
+          background: $red;
+          color: $white;
+        }
+      }
+      input {
+        width: 100%;
+        max-width: 37.7rem;
+        height: 7.2rem;
+        border: 1px solid #e6e6f0;
+        border-radius: 1rem;
+        color: $p;
+        font-family: Poppins;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        padding-left: 2.4rem;
+      }
+      form {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+  }
+}

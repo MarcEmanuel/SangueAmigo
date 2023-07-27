@@ -84,7 +84,6 @@ main {
           #datanascimento, #gruposanguineo {
             border-radius: 0rem 0.8rem 0rem 0rem;
             padding-right: 2.4rem;
-            
           }
           #email, #fatorrh {
             border-radius: 0rem 0rem 0rem 0.8rem;
@@ -95,6 +94,9 @@ main {
           }
           #estado, #cep, #numero{
             max-width: 23rem;
+            @media screen and (max-width: 69rem) {
+              max-width: 35.2rem;;
+            }
           }
         }
         button {

@@ -32,20 +32,42 @@
         <div class="register-box">
           <h1>Cadastro</h1>
           <p>Preencha os dados abaixo para começar.</p>
-          <form action="./cadastrosecond.html">
+          <form action="./concluido.html">
             <div class="left">
               <input
                 type="number"
                 name="cep"
                 id="cep"
-                required
                 placeholder="CEP (apenas números)"
               />
-              <input type="text" id="estado" name="estado" required placeholder="Estado"/>
-              <!-- <input type="text" id="rua" name="rua" required placeholder="Rua" /> -->
-              <input type="number" id="numero" name="numero" required placeholder="Número"/>
-              <input type="text" id="cidade" name="cidade" required placeholder="Cidade"/>
-              <input type="text" id="rua" name="rua" required placeholder="Rua" />
+              <input
+                type="text"
+                id="estado"
+                name="estado"
+
+                placeholder="Estado"
+              />
+              <input
+                type="number"
+                id="numero"
+                name="numero"
+                
+                placeholder="Número"
+              />
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+               
+                placeholder="Cidade"
+              />
+              <input
+                type="text"
+                id="rua"
+                name="rua"
+                
+                placeholder="Rua"
+              />
             </div>
             <button type="submit">Continuar</button>
           </form>
@@ -64,7 +86,7 @@
                 document.getElementById("rua").value = data.logradouro;
                 document.getElementById("cidade").value = data.localidade;
                 document.getElementById("estado").value = data.uf;
-              } 
+              }
               // else {
               //   alert("CEP não encontrado. Verifique o CEP digitado.");
               // }
