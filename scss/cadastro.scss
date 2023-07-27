@@ -7,11 +7,21 @@ main {
   .contaainer {
     justify-content: center;
     .top-image {
-      width: 3.2rem;
+      width: 90vw;
       height: 4.9rem;
       position: absolute;
       top: 2.7rem;
       left: 7.2rem;
+      a {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        p{
+          color: $red;
+          font-size: 2rem;
+          font-family: 'Overpass', sans-serif;
+        }
+      }
     }
     width: 100vw;
     height: 100vh;
@@ -21,9 +31,10 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
       p {
         color: var(--texts-base, #6a6180);
-        font-family: Poppins;
+        font-family: "Poppins", sans-serif;
         font-size: 1.6rem;
         font-style: normal;
         font-weight: 400;
@@ -39,13 +50,19 @@ main {
         margin-bottom: 2.7rem;
       }
       form {
-        // max-width: 35.2rem;
+        width: 100%;
+        max-width: 74.4rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         .left {
-          padding-left: 4rem;
-          input, select {
+          justify-content: space-evenly;
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 74.4rem;
+          width: 100%;
+          input,
+          select {
             width: 100%;
             max-width: 35.2rem;
             height: 7.2rem;
@@ -57,52 +74,27 @@ main {
             line-height: 2.4rem;
             padding-left: 2.4rem;
             margin-bottom: 2.9rem;
+            &::placeholder {
+              color: $p;
+            }
           }
-          #nome{
+          #nome, #sexo {
             border-radius: 0.8rem 0rem 0rem 0rem;
           }
-          #datanascimento{
+          #datanascimento, #gruposanguineo {
             border-radius: 0rem 0.8rem 0rem 0rem;
+            padding-right: 2.4rem;
+            
           }
-          #email{
+          #email, #fatorrh {
             border-radius: 0rem 0rem 0rem 0.8rem;
+            
           }
-          #senha{
+          #senha, #peso {
             border-radius: 0rem 0rem 0.8rem 0rem;
           }
-        }
-        .conjunto {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 4rem;
-          text-decoration-line: uns;
-          .left {
-            display: flex;
-            input {
-              margin-right: 1.6rem;
-              //NECESSÁRIO ADICIONAR CÓDIGO PARA O CHECKBOX FICAR VERMELHO!
-            }
-            a {
-              text-decoration-line: unset;
-            }
-          }
-          .right {
-            a {
-              text-decoration-line: unset;
-            }
-          }
-          input {
-            width: 2.4rem;
-            height: 2.4rem;
-          }
-          p,
-          label {
-            color: $p;
-            font-family: "Poppins", sans-serif;
-            font-size: 1.4rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 2.4rem; /* 171.429% */
+          #estado, #cep, #numero{
+            max-width: 23rem;
           }
         }
         button {
