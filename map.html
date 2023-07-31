@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body onload="searchPlaces()">
     <header>
       <div class="user">
         <button>
@@ -87,237 +87,18 @@
         <img src="./img/gotasidebar.svg" alt="" class="imgnotselected" />
       </div>
     </nav>
-
     <main>
       <div class="container">
-        <div id="map" style="height: 100%; width: 100%"></div>
+        <div id="map" style="width: 100%; height: 100%"></div>
       </div>
     </main>
   </body>
-  <!-- <script>
-    // This code will get the user's location and show a map of the nearest blood banks
-    var map = new google.maps.Map(document.getElementById("map"), {
-      center: new google.maps.LatLng(-9.8018383, -36.1145013),
-      zoom: 13,
-    });
-    
-    // Get the user's location
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({
-      address: "57245321",
-    }, function(results, status) {
-      if (status === google.maps.GeocoderStatus.OK) {
-        // The user's location has been found
-        var userLocation = results[0].geometry.location;
-    
-        // Add a marker to the map at the user's location
-        var marker = new google.maps.Marker({
-          position: userLocation,
-          map: map,
-        });
-    
-        // Get a list of the nearest blood banks
-        var bloodBanks = [
-          {
-            name: "Blood Bank 1",
-            address: "123 Main Street, Anytown, CA 91234",
-            phone: "(555) 555-5555",
-          },
-          {
-            name: "Blood Bank 2",
-            address: "456 Elm Street, Anytown, CA 91234",
-            phone: "(555) 555-5556",
-          },
-        ];
-    
-        // Add a marker to the map for each blood bank
-        for (var i = 0; i < bloodBanks.length; i++) {
-          var bloodBank = bloodBanks[i];
-          var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(bloodBank.latitude, bloodBank.longitude),
-            map: map,
-            title: bloodBank.name,
-            infoWindow: new google.maps.InfoWindow({
-              content: bloodBank.address + "<br>" + bloodBank.phone,
-            }),
-          });
-    
-          // When a marker is clicked, show its info window
-          marker.addListener("click", function() {
-            this.infoWindow.open(map, this);
-          });
-        }
-      } else {
-        // The user's location could not be found
-        alert("Your location could not be found.");
-      }
-    });
-    
-    // Get the list of the nearest blood banks
-    var bloodBanksNearMe = google.maps.places.nearbySearch({
-      location: userLocation,
-      radius: 10000,
-      type: ['hospital']
-    });
-    
-    // Add a marker for each blood bank near the user
-    bloodBanksNearMe.addListener('places_changed', function() {
-      for (var i = 0; i < bloodBanksNearMe.getPlaces().length; i++) {
-        var bloodBank = bloodBanksNearMe.getPlaces()[i];
-        var marker = new google.maps.Marker({
-          position: bloodBank.geometry.location,
-          map: map,
-          title: bloodBank.name,
-          infoWindow: new google.maps.InfoWindow({
-            content: bloodBank.formatted_address,
-          }),
-        });
-    
-        // When a marker is clicked, show its info window
-        marker.addListener("click", function() {
-          this.infoWindow.open(map, this);
-        });
-      }
-    });
-    </script> -->
-    <script>
-        function initMap() {
-            const cep = "57245321"; // Irá obter o CEP cadastrado no perfil do usuário
-
-            const geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ address: cep }, function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
-                    const userLocation = {
-                        lat: results[0].geometry.location.lat(),
-                        lng: results[0].geometry.location.lng()
-                    };
-
-                    const mapOptions = {
-                        center: userLocation,
-                        zoom: 12
-                    };
-
-                    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-                    new google.maps.Marker({
-                        position: userLocation,
-                        map: map,
-                        title: 'Seu CEP'
-                    });
-
-                    const service = new google.maps.places.PlacesService(map);
-                    service.nearbySearch({
-                        location: userLocation,
-                        radius: 10000, // Raio de busca em metros (exemplo: 10000 metros = 10 km)
-                        type: 'hospital', // Filtra os resultados para locais do tipo hospital (hemocentros)
-                        keyword: 'hemocentro' // Palavra-chave para a busca (hemocentro)
-                    }, processResults);
-
-                    function processResults(results, status) {
-                        if (status === google.maps.places.PlacesServiceStatus.OK) {
-                            for (let i = 0; i < results.length; i++) {
-                                // Adicionar marcadores para cada hemocentro encontrado
-                                new google.maps.Marker({
-                                    position: results[i].geometry.location,
-                                    map: map,
-                                    title: results[i].name
-                                });
-                            }
-                        } else {
-                            console.log('Nenhum hemocentro encontrado.');
-                        }
-                    }
-                } else {
-                    console.log('CEP não encontrado.');
-                }
-            });
-        }
-    </script>
-    <script>
-        // This code will get the user's location and show a map of the nearest blood banks
-        var map = new google.maps.Map(document.getElementById("map"), {
-          center: new google.maps.LatLng(-4.845008, -37.801109),
-          zoom: 13,
-        });
-        
-        // Get the user's location
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({
-          address: "57245321",
-        }, function(results, status) {
-          if (status === google.maps.GeocoderStatus.OK) {
-            // The user's location has been found
-            var userLocation = results[0].geometry.location;
-        
-            // Add a marker to the map at the user's location
-            var marker = new google.maps.Marker({
-              position: userLocation,
-              map: map,
-            });
-        
-            // Get a list of the nearest blood banks
-            var bloodBanks = [
-              {
-                name: "Hemocentro de Natal",
-                address: "Av. Sen. Salgado Filho, 2400, Lagoa Nova, Natal - RN, 59056-200",
-                phone: "(84) 3232-6178",
-              },
-              {
-                name: "Hemocentro Regional do Seridó",
-                address: "Av. Alberto Maranhão, 55, Centro, Caicó - RN, 59300-000",
-                phone: "(84) 3421-2323",
-              },
-            ];
-        
-            // Add a marker to the map for each blood bank
-            for (var i = 0; i < bloodBanks.length; i++) {
-              var bloodBank = bloodBanks[i];
-              var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(bloodBank.latitude, bloodBank.longitude),
-                map: map,
-                title: bloodBank.name,
-                infoWindow: new google.maps.InfoWindow({
-                  content: bloodBank.address + "<br>" + bloodBank.phone,
-                }),
-              });
-        
-              // When a marker is clicked, show its info window
-              marker.addListener("click", function() {
-                this.infoWindow.open(map, this);
-              });
-            }
-          } else {
-            // The user's location could not be found
-            alert("Your location could not be found.");
-          }
-        });
-        
-        // Get the list of the nearest blood banks
-        var bloodBanksNearMe = google.maps.places.nearbySearch({
-          location: userLocation,
-          radius: 10000,
-          type: ['hospital']
-        });
-        
-        // Add a marker for each blood bank near the user
-        bloodBanksNearMe.addListener('places_changed', function() {
-          for (var i = 0; i < bloodBanksNearMe.getPlaces().length; i++) {
-            var bloodBank = bloodBanksNearMe.getPlaces()[i];
-            var marker = new google.maps.Marker({
-              position: bloodBank.geometry.location,
-              map: map,
-              title: bloodBank.name,
-              infoWindow: new google.maps.InfoWindow({
-                content: bloodBank.formatted_address,
-              }),
-            });
-        
-            // When a marker is clicked, show its info window
-            marker.addListener("click", function() {
-              this.infoWindow.open(map, this);
-            });
-          }
-        });
-        </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfDT48kuTU7b4xrHhlg6F77BM4V_ix7w8&callback=initMap"></script>
+  <script src="js/libs/jquery-3.3.1.min.js"></script>
+  <script src="js/libs/knockout-3.4.2.js"></script>
+  <script src="js/app.js"></script>
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyA5poCbxa_NE_Jxm1A06ve5yd2-v2kqQa8&v=3&callback=initMap"
+  ></script>
 </html>
