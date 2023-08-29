@@ -7,11 +7,16 @@
 main {
   .container {
     display: flex;
+    flex-wrap: wrap;
     // align-items: center;
     .top {
+      margin-top: 6rem;
       width: 100%;
+      // max-width: 115rem;
       display: flex;
-      //   justify-content: space-around;
+      margin-left: 6rem;
+      margin-right: 10rem;
+      justify-content: center;
       .top-left {
         width: 22rem;
         height: 22rem;
@@ -30,14 +35,21 @@ main {
         }
       }
       .top-right {
-        width: 80rem;
+        width: 100%;
+        max-width: 80rem;
         height: 22rem;
         .retangulo {
           width: 100%;
+          max-width: 80rem;
           display: flex;
           flex-wrap: wrap;
+          border-radius: 1rem;
+          border: 1px solid #25213b;
+          background: rgba(230, 230, 242, 0.3);
+          margin-left: 5rem;
+          justify-content: space-around;
           .retangulo-dados {
-            width: 100%;
+            width: 40%;
             max-width: 35rem;
             height: 5rem;
             border-radius: 1rem;
@@ -47,6 +59,62 @@ main {
             display: flex;
             align-items: center;
             padding-left: 2rem;
+          }
+        }
+      }
+      p {
+        color: $black;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    .bottom {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5rem;
+      margin-left: 10rem;
+      .conteudo {
+        width: 100%;
+        max-width: 115rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .bottom-left {
+        p {
+          color: $black;
+          font-family: "Poppins", sans-serif;
+          font-size: 1.6rem;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+      .bottom-right {
+        width: 18rem;
+        height: 18rem;
+        .circulo {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: $red;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .txt {
+            text-align: center;
+            color: #fff;
+            font-family: Poppins;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+          h1 {
+            font-size: 4.8rem;
           }
         }
       }
