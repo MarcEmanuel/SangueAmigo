@@ -11,7 +11,7 @@ main {
     flex-direction: column;
     bottom: unset;
     .title {
-      margin-top: 5rem;
+      margin-top: 2.5rem;
       margin-bottom: 3rem;
       position: relative;
       font-family: "Poppins", sans-serif;
@@ -24,7 +24,7 @@ main {
       text-align: center;
       width: 100%;
     }
-    .coisas{
+    .coisas {
       width: 100%;
       max-width: 112rem;
       .cards {
@@ -74,48 +74,57 @@ main {
         width: 100%;
         max-width: 112rem;
         background-color: $white;
-        margin-top: 2rem;
-        border-radius: .8rem;
+        margin: 2rem 0;
+        border-radius: 0.8rem;
         height: 30rem;
         h2 {
           padding-top: 1rem;
           text-align: center;
           color: $letterhome;
           font-family: "Poppins", sans-serif;
-          font-size: 1.8858rem;
+          font-size: 2.2rem;
           font-style: normal;
           font-weight: 400;
           line-height: 3.2328rem; /* 171.429% */
           letter-spacing: 0.0189rem;
         }
-        
-        .estoques{
-          margin-top: 5rem;
+
+        .estoques {
+          margin-top: 2rem;
           h3 {
             text-align: center;
             color: $letterhome;
             font-family: "Poppins", sans-serif;
-            font-size: 1.8858rem;
+            font-size: 2rem;
             font-style: normal;
             font-weight: 400;
             line-height: 3.2328rem; /* 171.429% */
             letter-spacing: 0.0189rem;
           }
-          ul{
+          ul {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            li{
+            li {
               width: 33%;
               max-width: 30rem;
               align-items: center;
               text-align: center;
-              
+              display: flex;
+              flex-direction: column;
+              h4 {
+                color: #a6acbe;
+                font-family: Poppins;
+                font-size: 1.8rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.014rem;
+              }
             }
           }
         }
       }
     }
-    
   }
 }
