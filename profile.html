@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="stylesheet" href="./css/profile.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,11 +20,11 @@
     <link rel="icon" href="./img/title.png" />
     <title>Sangue Amigo</title>
   </head>
-  
+
   <body>
     <header>
       <div class="user">
-        <button>
+        <button onclick="perfil()">
           <div class="text">
             <p>Larissa Santana</p>
             <h2>O+</h2>
@@ -69,7 +69,7 @@
               class="imgselected"
             />
           </button>
-          <p>Estoques</p>
+          <p>Estatísticass</p>
         </a>
         <a href="./hemocentros.html">
           <button>
@@ -92,11 +92,14 @@
         <a href="./novadoacao.html">
           <button>
             <img src="./img/novadoacao.svg" alt="" class="imgnotselected" />
-            <img src="./img/novadoacaoSelected.svg" alt="" class="imgselected" />
+            <img
+              src="./img/novadoacaoSelected.svg"
+              alt=""
+              class="imgselected"
+            />
           </button>
-          <p>Cadastrar<br>doação</p>
+          <p>Cadastrar<br />doação</p>
         </a>
-        
       </div>
       <div class="img">
         <img src="./img/gotasidebar.svg" alt="" class="imgnotselected" />
@@ -146,14 +149,19 @@
               <div class="circulo">
                 <div class="txt">
                   <p>Já doei:</p>
-                  <h1>0</h1><span>Vezes</span>
+                  <h1>0</h1>
+                  <span>Vezes</span>
                 </div>
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </main>
   </body>
+  <script>
+    function perfil() {
+      window.location.href = "profile.html";
+    }
+  </script>
 </html>

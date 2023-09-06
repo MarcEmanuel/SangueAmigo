@@ -23,7 +23,7 @@
   <body>
     <header>
       <div class="user">
-        <button>
+        <button onclick="perfil()">
           <div class="text">
             <p>Larissa Santana</p>
             <h2>O+</h2>
@@ -36,7 +36,7 @@
             <img src="./img/linetop.svg" alt="" />
           </div>
         </button>
-        <a href="./login.html"
+        <a href="./index.html"
           ><button>
             <img src="./img/icon/logout.svg" alt="" /></button
         ></a>
@@ -68,7 +68,7 @@
               class="imgselected"
             />
           </button>
-          <p>Estoques</p>
+          <p>Estatísticass</p>
         </a>
         <a href="./hemocentros.html">
           <button class="selected">
@@ -136,4 +136,9 @@
       </div>
     </main>
   </body>
+  <script>
+     function perfil() {
+      window.location.href = "profile.html";
+    }
+  </script>
 </html>
