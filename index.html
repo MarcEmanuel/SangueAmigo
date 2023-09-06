@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="./img/title.png" />
-    <title>SangueAmigo</title>
+    <title>Sangue Amigo</title>
   </head>
   <body>
     <header>
@@ -21,13 +21,7 @@
           <img src="./img/logoSangueWhite.svg" alt="logo KingHost" />
         </div>
         <div class="botoes">
-          <!-- <div class="help">
-            <img src="./img/ajuda.svg" alt="" />
-            <span>Precisa de ajuda?</span>
-          </div> -->
           <div class="teste">
-            <!-- <img src="img/estrela.svg" alt="" /> -->
-            <!-- <span>Acesse gratuitamente</span> -->
             <a href="./login.html"><button>Entrar</button></a>
           </div>
         </div>
@@ -38,11 +32,9 @@
         <div class="container">
           <div class="text-hero">
             <h1>A plataforma Nº1 para doação de Sangue em Alagoas!</h1>
-            <p>
-              Doar sangue é um ato nobre, seja herói nessa história.
-            </p>
+            <p>Doar sangue é um ato nobre, seja herói nessa história.</p>
             <a href="./login.html"><button>Acesse gratuitamente</button></a>
-            <div class="recursos">
+            <div class="recursos" onclick="rolarParaSecao()">
               <img src="./img/setaSA.svg" alt="" />
               <span>Conheça os recursos</span>
             </div>
@@ -58,12 +50,10 @@
         </div>
       </div>
     </div>
-    <div class="semi-hero">
+    <div class="semi-hero" id="secao-alvo">
       <div class="container">
         <div class="textos">
-          <h2>
-            Conheça os recursos da plataforma Sangue Amigo
-          </h2>
+          <h2>Conheça os recursos da plataforma Sangue Amigo</h2>
           <p>Mais de <strong>500 doadores</strong> utilizam ♥</p>
         </div>
         <div class="cards">
@@ -78,7 +68,8 @@
             <div class="texts">
               <h3>Perfil pessoal</h3>
               <p>
-                Saiba sempre que você puder realizar uma nova doação e descubra se está apto sem sair de casa.
+                Saiba sempre que você puder realizar uma nova doação e descubra
+                se está apto sem sair de casa.
               </p>
             </div>
           </div>
@@ -93,7 +84,8 @@
             <div class="texts">
               <h3>Mapa</h3>
               <p>
-                Navegue pelo mapa do estado e descubra os hemocentros que estão de portas abertas para você.
+                Navegue pelo mapa do estado e descubra os hemocentros que estão
+                de portas abertas para você.
               </p>
             </div>
           </div>
@@ -108,7 +100,8 @@
             <div class="texts">
               <h3>Estatísticas</h3>
               <p>
-                Confira as estatísticas a respeito dos bancos de sangue em cada hemocentro e saiba quem mais precisa.
+                Confira as estatísticas a respeito dos bancos de sangue em cada
+                hemocentro e saiba quem mais precisa.
               </p>
             </div>
           </div>
@@ -123,7 +116,8 @@
             <div class="texts">
               <h3>Hemocentros próximos</h3>
               <p>
-                Veja uma lista com todos os hemocentros que estão próximos da sua localização e descubra onde pode doar.
+                Veja uma lista com todos os hemocentros que estão próximos da
+                sua localização e descubra onde pode doar.
               </p>
             </div>
           </div>
@@ -132,4 +126,14 @@
       </div>
     </div>
   </body>
+  <script>
+    function rolarParaSecao() {
+      const secaoAlvo = document.getElementById("secao-alvo");
+      const posicaoAlvo = secaoAlvo.offsetTop;
+      window.scrollTo({
+        top: posicaoAlvo,
+        behavior: "smooth", // Rola suavemente
+      });
+    }
+  </script>
 </html>
