@@ -21,7 +21,7 @@
       <div class="contaainer">
         <div class="login-box">
           <h1>Entrar</h1>
-          <form action="./home.html">
+          <form>
             <div class="entradas">
               <input
                 type="text"
@@ -45,7 +45,7 @@
                 <a href="./recoverpass.html"><p>Esqueci minha senha</p></a>
               </div>
             </div>
-            <button type="submit">Entrar</button>
+            <button id="buttonSubmit">Entrar</button>
           </form>
           <a href="./cadastro.html">Criar conta</a>
         </div>
@@ -55,52 +55,37 @@
 
   <script>
 
-    function autenticarUsuario(email, senha) {
-      const url = "/auth/login";
-      const dados = {
-        email: email,
-        senha: senha,
-      };
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dados),
-      };
-
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((dados) => {
-          console.log(dados);
-        })
-        .catch((error) => {
-          alert("Ocorreu um erro " + error);
-        });
+    function addListeners() {
+      document.getElementById('buttonSubmit').addEventListener('click', (event) => {
+        event.preventDefault();
+       
+        autenticarUsuario();
+      })
     }
+    addEventListener('DOMContentLoaded', () => {
+      addListeners();
+    })
 
-    function registrarUsuario(email, senha) {
-      const url = "/auth/register";
-      const dados = {
-        email: email,
-        senha: senha,
-      };
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dados),
-      };
 
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((dados) => {
-          console.log(dados);
-        })
-        .catch((error) => {
-          alert("Ocorreu um erro " + error);
-        });
+    async function autenticarUsuario() {
+      try {
+        const url = "https://localhost:3000/api/login";
+        const email = document.getElementById('login').value;
+        const senha = document.getElementById('password').value;
+        const data = { email, senha };
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, senha }),
+        };
+  
+        const response = await fetch(url, options);
+        console.log(`RESPONSE: ${response}`);
+      } catch (err) {
+        console.log(err)
+      }
     }
 
     function getbloodCentersList() {
